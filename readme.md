@@ -117,3 +117,46 @@ As a user, I want to see visual charts of event data so that I can quickly under
    - **When** the user views the event charts section,
    - **Then** a chart should be displayed showing the number of upcoming events for each city.
 
+
+           +-----------------------------------+
+           |          React Frontend           |
+           |-----------------------------------|
+           |  - Event Filtering by City        |
+           |  - Show/Hide Event Details        |
+           |  - Specify Number of Events       |
+           |  - Data Visualization (Charts)    |
+           |  - Service Worker (Offline Mode)  |
+           +-----------------------------------+
+                       |
+                       | OAuth2 Authentication
+                       |
+        +------------------------------+
+        | AWS Lambda (Authorization)   | <-----> Google Calendar API
+        +------------------------------+
+                       |   Serverless Functions
+                       |
+  +----------------------------+       +---------------------------------+
+  | AWS Lambda Functions       |<----->|  Data Processing and Filtering |
+  | - Event Filtering          |       |  Data Aggregation for Charts   |
+  | - Data Aggregation         |       +---------------------------------+
+  +----------------------------+
+                       |
+                       | Data Retrieval
+                       |
+       +-----------------------------+
+       |     Google Calendar API     |
+       +-----------------------------+
+                       |
+          Data Fetching for Events
+                       |
+       +-----------------------------+
+       |       GitHub Pages          |
+       |  (Hosting and Deployment)   |
+       +-----------------------------+
+                       |
+      +--------------------------------+
+      | Performance Monitoring Tool    |
+      | (e.g., AWS CloudWatch)         |
+      +--------------------------------+
+
+
