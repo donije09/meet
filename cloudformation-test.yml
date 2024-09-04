@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  TestLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: TestAuthURLLambdaFunction
+      Handler: handler.getAuthURL
+      Role: arn:aws:iam::529088291930:role/auth-server-dev-eu-central-1-lambdaRole
+      Runtime: nodejs18.x
+      Timeout: 30
+      Environment:
+        Variables:
+          CLIENT_ID: ${file(config.json):CLIENT_ID}
+          CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
+          CALENDAR_ID: ${file(config.json):CALENDAR_ID}
+      Code:
+        ZipFile: |
+          exports.handler = async (event) => {
+            return {
+              statusCode: 200,
+              body: JSON.stringify({ message: "Hello from Lambda!" }),
+            };
+          };

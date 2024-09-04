@@ -1,0 +1,11 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: carreerfoundry
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: auth-server
+service: my-service
+provider:
+  name: aws
+  runtime: nodejs14.x
+functions:
+  hello:
+    handler: handler.hello
