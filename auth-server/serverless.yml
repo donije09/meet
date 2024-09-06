@@ -17,11 +17,11 @@ functions:
       - http:
           path: api/get-auth-url  # The API path is set correctly here
           method: get
-          cors: true
+          
   getAccessToken:
     handler: handler.getAccessToken
     events:
       - http:
           path: api/token/{code}
           method: get
-          cors: true
+          

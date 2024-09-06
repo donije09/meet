@@ -383,5 +383,77 @@
         "OutputValue": "my-service-dev-serverlessdeploymentbucket-ycfvdafp6kgq"
       }
     ]
+  },
+  "C:\\Users\\ustin\\desktop\\meet": {
+    "versionSfCore": null,
+    "versionFramework": "4.2.5",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "default-aws-credential-resolver": "<REDACTED>"
+    },
+    "composeServiceName": null,
+    "servicePath": "C:\\Users\\ustin\\desktop\\meet",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "org": "carreerfoundry",
+      "app": "auth-server",
+      "service": "my-service",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs14.x",
+        "stage": "dev",
+        "region": "us-east-1",
+        "versionFunctions": true
+      },
+      "functions": {
+        "hello": {
+          "handler": "handler.hello"
+        }
+      }
+    },
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: carreerfoundry\n# \"app\" enables Serverless Framework Dashboard features and sharing them with other Services.\napp: auth-server\nservice: my-service\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs14.x\r\nfunctions:\r\n  hello:\r\n    handler: handler.hello\r\n",
+    "command": [
+      "info",
+      "..debug"
+    ],
+    "options": {},
+    "error": {
+      "message": "Serverless command \"info ..debug\" not found. Run \"serverless help\" for a list of all available commands.",
+      "code": "UNRECOGNIZED_CLI_COMMAND"
+    },
+    "params": {},
+    "machineId": "918301a9a9111b1f40c56fd92e11c680",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "70ddcf4e-25b4-4656-b3be-2ae44fc8a479",
+    "orgName": "carreerfoundry",
+    "userId": "WYGnn0j6DW7Wps5y0R",
+    "dashboard": {
+      "isEnabledForService": true,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": {
+        "providers": false,
+        "monitoring": false
+      },
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": "GJMH8zchs4FpRMgKlS",
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "carreerfoundry",
+    "subscription": null,
+    "userEmail": "ustinedon@gmail.com",
+    "serviceProviderAwsCredentials": "<REDACTED>",
+    "serviceProviderAwsAccountId": "529088291930",
+    "projectType": "framework",
+    "versionSf": "4.2.5",
+    "serviceProviderAwsCfStackName": "my-service-dev",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
   }
 }
