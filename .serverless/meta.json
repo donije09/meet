@@ -415,12 +415,14 @@
     },
     "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\norg: carreerfoundry\n# \"app\" enables Serverless Framework Dashboard features and sharing them with other Services.\napp: auth-server\nservice: my-service\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs14.x\r\nfunctions:\r\n  hello:\r\n    handler: handler.hello\r\n",
     "command": [
-      "info",
-      "..debug"
+      "create"
     ],
-    "options": {},
+    "options": {
+      "template": "aws-nodejs",
+      "path": "my-service"
+    },
     "error": {
-      "message": "Serverless command \"info ..debug\" not found. Run \"serverless help\" for a list of all available commands.",
+      "message": "The \"create\" command was deprecated in v4. To create a new project, run the \"serverless\" command instead.",
       "code": "UNRECOGNIZED_CLI_COMMAND"
     },
     "params": {},
