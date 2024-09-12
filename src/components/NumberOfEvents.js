@@ -1,11 +1,9 @@
 // NumberOfEvents.js
-import React, { useState } from 'react';
+import React from 'react';
 
-const NumberOfEvents = () => {
-  const [numberOfEvents, setNumberOfEvents] = useState(32);
-
+const NumberOfEvents = ({ currentNOE, setCurrentNOE }) => {
   const handleInputChange = (event) => {
-    setNumberOfEvents(event.target.value);
+    setCurrentNOE(Number(event.target.value));
   };
 
   return (
@@ -13,7 +11,7 @@ const NumberOfEvents = () => {
       <input
         type="number"
         role="textbox"
-        value={numberOfEvents}
+        value={currentNOE}
         onChange={handleInputChange}
       />
     </div>
