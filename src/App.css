@@ -18,6 +18,13 @@
   padding: 20px;
   border-radius: 8px;
 }
+.alerts-container {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  width: 250px;
+  z-index: 1000;
+}
 
 /* Event List Styling */
 #event-list {
