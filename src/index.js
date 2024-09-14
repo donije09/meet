@@ -5,6 +5,9 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+import * as atatus from 'atatus-spa';
+atatus.config('0e5a7a38786140e5ab4d1695be8e01c3').install();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
