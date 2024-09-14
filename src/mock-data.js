@@ -238,3 +238,7 @@ const mockData = [
 ];
 
 export default mockData;
+
+export const getEvents = async () => {
+    return mockData; // Simulate an API call that returns the mockData
+  };

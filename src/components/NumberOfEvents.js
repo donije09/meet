@@ -11,6 +11,7 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE }) => {
       <input
         type="number"
         role="textbox"
+        aria-label="Number of events"
         value={currentNOE}
         onChange={handleInputChange}
       />

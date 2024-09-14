@@ -59,7 +59,7 @@ describe('<App /> integration', () => {
     const AppDOM = AppComponent.container.firstChild;
   
     // Select the number of events input specifically within the NumberOfEvents component
-    const numberOfEventsInput = within(AppDOM.querySelector('.number-of-events')).getByRole('textbox', { name: '' });
+    const numberOfEventsInput = within(AppDOM.querySelector('.number-of-events')).getByRole('textbox', { name: 'Number of events' });
   
     // Simulate user changing the number of events to 10
     await user.type(numberOfEventsInput, '{backspace}{backspace}10');
