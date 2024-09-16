@@ -1,7 +1,7 @@
 // src/api.js
 
 import mockData from './mock-data';
-
+import NProgress from 'nprogress';
 /**
  * Extracts unique locations from the events array.
  * @param {*} events - An array of event objects
@@ -18,12 +18,21 @@ export const extractLocations = (events) => {
  * otherwise fetches real events from the Google Calendar API.
  */
 export const getEvents = async () => {
+  // Use mock data for local development
   if (window.location.href.startsWith("http://localhost")) {
-    return mockData; // Use mock data for local development
+    return mockData;
   }
 
-  const token = await getAccessToken(); // Get access token
+  // Check if the user is offline and load events from localStorage
+  if (!navigator.onLine) {
+    const events = localStorage.getItem("lastEvents");
+    NProgress.done();
+    return events ? JSON.parse(events) : [];
+  }
 
+  // User is online, proceed to fetch real events
+  const token = await getAccessToken();
+  
   if (token) {
     removeQuery(); // Clean up the URL after token retrieval
     const url = "https://pa9s7eitp0.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" + '/' + token;
@@ -31,7 +40,10 @@ export const getEvents = async () => {
     const result = await response.json();
 
     if (result) {
-      return result.events; // Return real events from API
+      NProgress.done();
+      // Save the fetched events to localStorage for offline access
+      localStorage.setItem("lastEvents", JSON.stringify(result.events));
+      return result.events;
     }
   }
 
