@@ -32,15 +32,15 @@ const CityEventsChart = ({ allLocations, events }) => {
         margin={{
           top: 20,
           right: 20,
-          bottom: 20,
-          left: 20,
+          bottom: 60,
+          left: -30,
         }}
       >
-        <CartesianGrid />
-        <XAxis type="category" dataKey="city" name="City" />
-        <YAxis type="number" dataKey="count" name="Number of events" allowDecimals={false} />
+         <CartesianGrid />
+        <XAxis type="number" dataKey="x" name="stature" unit="cm" />
+        <YAxis type="number" dataKey="y" name="weight" unit="kg" />
         <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-        <Scatter name="A school" data={data} fill="#8884d8"/>
+        <Scatter name="A school" data={data} fill="#8884d8" />
       </ScatterChart>
     </ResponsiveContainer>
   );
