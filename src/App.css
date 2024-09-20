@@ -101,3 +101,14 @@ input[type="number"]:focus {
     transform: rotate(360deg);
   }
 }
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for the scatter and pie charts */
+  gap: 20px; /* Space between the two charts */
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr; /* Stack the charts on smaller screens */
+  }
+}

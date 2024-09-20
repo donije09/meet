@@ -1,5 +1,3 @@
-// src/components/CityEventsChart.js
-
 import { useState, useEffect } from 'react';
 import {
   ScatterChart,
@@ -15,15 +13,14 @@ const CityEventsChart = ({ allLocations, events }) => {
 
   useEffect(() => {
     setData(getData());
-  }, [`${data}`]);
+  }, [allLocations, events]);
 
   const getData = () => {
-    const data = allLocations.map((location) => {
-      const count = events.filter((event) => event.location === location).length
-      const city = location.split(', ')[0]
-      return { city, count };
-    })
-    return data;
+    return allLocations.map((location) => {
+      const count = events.filter((event) => event.location === location).length;
+      const city = location.split(', ')[0]; // Extract the city name
+      return { city, count }; // Return city and event count for the scatter plot
+    });
   };
 
   return (
@@ -36,14 +33,14 @@ const CityEventsChart = ({ allLocations, events }) => {
           left: -30,
         }}
       >
-         <CartesianGrid />
-        <XAxis type="number" dataKey="x" name="stature" unit="cm" />
-        <YAxis type="number" dataKey="y" name="weight" unit="kg" />
+        <CartesianGrid />
+        <XAxis type="category" dataKey="city" name="City" />
+        <YAxis type="number" dataKey="count" name="Number of Events" />
         <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-        <Scatter name="A school" data={data} fill="#8884d8" />
+        <Scatter name="Events in City" data={data} fill="#8884d8" />
       </ScatterChart>
     </ResponsiveContainer>
   );
-}
+};
 
 export default CityEventsChart;
