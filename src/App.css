@@ -109,6 +109,6 @@ input[type="number"]:focus {
 
 @media (max-width: 768px) {
   .charts-container {
-    grid-template-columns: 1fr; /* Stack the charts on smaller screens */
+    grid-template-columns: 1fr; /* Stack the clharts on smaller screens */
   }
 }
